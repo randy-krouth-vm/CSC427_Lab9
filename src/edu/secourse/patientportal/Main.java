@@ -12,17 +12,36 @@ public class Main {
         UserController userController = new UserController(userService);
 
         // Create a new user
-        User user1 = new Patient(1,"john_doe", "pass123", "John Doe", "john@example.com");
+        User user1 = new Patient("john_doe", "pass123", "John Doe", "john@example.com");
         userController.createUser(user1);
 
-        userController.updateUser(1,"jane_doe", "pass1234", "Jane Doe", "jane@example.com");
+        User user2 = new Patient("john_p", "pass123", "John Poe", "john@example.com");
+        userController.createUser(user2);
 
 
 
-        // Remove a user
-        userController.deleteUser(user1);
 
-        // Try to remove again
-        userController.deleteUser(user1);
+//        if (user1 instanceof Patient) {
+//            System.out.println(((Patient) user1).getPatientId());
+//        }
+//
+//        if (user1 instanceof Patient) {
+//            System.out.println(((Patient) user2).getPatientId());
+//        }
+
+
+
+//        System.out.println(user1.getAccountNumber());
+//        System.out.println(user2.getAccountNumber());
+
+
+
+
+
+//        // Remove a user
+//        userController.deleteUser(user1);
+//
+//        // Try to remove again
+//        userController.deleteUser(user1);
     }
 }

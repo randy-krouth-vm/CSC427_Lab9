@@ -3,6 +3,7 @@ package edu.secourse.patientportal.models;
 public abstract class User {
 
     private int accountNumber;
+    public static int nextAccountNumber = 1;
     private String username;
     private String hashedPassword;
     private String name;
@@ -10,8 +11,8 @@ public abstract class User {
     private String role;
 
 
-    public User(int accountNumber, String username, String hashedPassword, String name, String email, String role){
-        this.accountNumber = accountNumber;
+    public User(String username, String hashedPassword, String name, String email, String role){
+       this.accountNumber = nextAccountNumber++;
         this.username = username;
         this.hashedPassword = hashedPassword;
         this.name = name;
@@ -27,9 +28,7 @@ public abstract class User {
 
     }
 
-    public void setAccountNumber(int accountNumber){
-        this.accountNumber = accountNumber;
-    }
+
 
     public String getUsername(){
         return username;
