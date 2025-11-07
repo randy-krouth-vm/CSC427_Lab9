@@ -42,7 +42,7 @@ public class Main {
             String role = input.nextLine().toLowerCase();
 
 
-            //Need to test
+            //Need to test more
             if (role.equals("patient")) {
 
                 User user = new Patient(username, name, password, email);
