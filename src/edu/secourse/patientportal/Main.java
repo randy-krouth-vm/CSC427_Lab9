@@ -41,6 +41,8 @@ public class Main {
             System.out.println("Please enter a role: patient, doctor, admin ");
             String role = input.nextLine().toLowerCase();
 
+
+            //Need to test
             if (role.equals("patient")) {
 
                 User user = new Patient(username, name, password, email);
