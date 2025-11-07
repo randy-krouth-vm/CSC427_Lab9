@@ -7,15 +7,54 @@ import java.util.ArrayList;
 public class UserService {
     ArrayList<User> users = new ArrayList<User>();
 
+    boolean usernameExists = false;
+    boolean emailExists = false;
 
 
     //Create User
     public boolean createUser(User user) {
-        if(users.contains(user)){
 
-            return false;
+
+        for (int i = 0; i < users.size(); i++) {
+
+            if (users.get(i).getUsername().equals(user.getUsername())) {
+
+
+                usernameExists = true;
+
+
+            }
+
+            if (users.get(i).getEmail().equals(user.getEmail())) {
+
+
+                emailExists = true;
+
+
+            }
+
+            if (usernameExists || emailExists) {
+                if (usernameExists) {
+
+                    System.out.println("Username already in use");
+
+
+                }
+
+                if (emailExists) {
+
+                    System.out.println("Email already in use");
+
+                }
+
+
+                return false;
+
+            }
+
 
         }
+
 
         users.add(user);
         return true;
@@ -24,7 +63,7 @@ public class UserService {
 
     //Remove User
     public boolean removeUser(User user) {
-        if(users.contains(user)  == false){
+        if (users.contains(user) == false) {
             return false;
         }
 
@@ -35,23 +74,23 @@ public class UserService {
 
     //Update User details
 
-    public boolean updateUser(int accountNumber, String username, String hashedPassword,String name, String email) {
+    public boolean updateUser(int accountNumber, String username, String hashedPassword, String name, String email) {
 
 
         //Checks to see if new username is already taken by another user
 
-        for(int i = 0; i < users.size(); i++ ){
+        for (int i = 0; i < users.size(); i++) {
             User currentUser = users.get(i);
-            if(currentUser.getUsername().equals(username) && currentUser.getAccountNumber() != accountNumber){
+            if (currentUser.getUsername().equals(username) && currentUser.getAccountNumber() != accountNumber) {
                 return false;
             }
         }
 
 
         //Finds correct user and updates the information
-        for(int i = 0; i < users.size(); i++){
+        for (int i = 0; i < users.size(); i++) {
             User user = users.get(i);
-            if(user.getAccountNumber() == accountNumber){
+            if (user.getAccountNumber() == accountNumber) {
 
                 user.setUsername(username);
                 user.setHashedPassword(hashedPassword);
@@ -61,14 +100,12 @@ public class UserService {
                 return true;
 
 
-
             }
 
 
         }
         return false;
     }
-
 
 
 }

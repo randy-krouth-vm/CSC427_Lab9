@@ -26,12 +26,15 @@ public class Appointment {
     public int getAppointmentId() {
         return appointmentId;
     }
+
     public void setAppointmentId(int appointmentId) {
         this.appointmentId = appointmentId;
     }
+
     public Patient getPatient() {
         return patient;
     }
+
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
@@ -39,16 +42,18 @@ public class Appointment {
     public Doctor getDoctor() {
         return doctor;
     }
+
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
+
     public LocalDateTime getAppointmentDateTime() {
         return appointmentDateTime;
     }
+
     public void setAppointmentDateTime(LocalDateTime appointmentDateTime) {
         this.appointmentDateTime = appointmentDateTime;
     }
-
 
 
 }
