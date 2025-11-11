@@ -52,7 +52,7 @@ public class Main {
 
             }
 
-            if (role.equals("doctor")) {
+            else if (role.equals("doctor")) {
 
                 User user = new Doctor(username, name, password, email);
                 user.setRole(role);
@@ -62,7 +62,7 @@ public class Main {
             }
 
 
-            if (role.equals("admin")) {
+            else if (role.equals("admin")) {
 
                 User user = new Admin(username, name, password, email);
                 user.setRole(role);

@@ -54,7 +54,7 @@ public class UserController {
 
         }
 
-        if (user.getRole() == null || user.getRole().isBlank() || (!role.equals("patient") && !role.equals("doctor") && !role.equals("admin"))) {
+        if (user.getRole().isBlank() || (!role.equals("patient") && !role.equals("doctor") && !role.equals("admin"))) {
 
             System.out.println("Enter in a valid role");
             isValid = false;
@@ -68,16 +68,21 @@ public class UserController {
         }
 
 
-        boolean success = userService.createUser(user);
 
-        if (success) {
-            System.out.println("User created successfully");
-        } else {
-            System.out.println("User creation failed");
+        try {
+            boolean success = userService.createUser(user);
+            if (success) {
+                System.out.println("User created successfully");
+            }
+        }catch (IllegalArgumentException e){
+
+                System.out.println("There was an error while creating the user: " + e.getMessage());
+
+
+            }
+
         }
 
-
-    }
 
 
     public void updateUser(int accountNumber, String username, String hashedPassword, String name, String email) {

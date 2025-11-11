@@ -7,12 +7,13 @@ import java.util.ArrayList;
 public class UserService {
     ArrayList<User> users = new ArrayList<User>();
 
-    boolean usernameExists = false;
-    boolean emailExists = false;
+
 
 
     //Create User
     public boolean createUser(User user) {
+
+
 
 
         for (int i = 0; i < users.size(); i++) {
@@ -20,7 +21,7 @@ public class UserService {
             if (users.get(i).getUsername().equals(user.getUsername())) {
 
 
-                usernameExists = true;
+               throw new IllegalArgumentException("Username already exists");
 
 
             }
@@ -28,29 +29,12 @@ public class UserService {
             if (users.get(i).getEmail().equals(user.getEmail())) {
 
 
-                emailExists = true;
+               throw new IllegalArgumentException("Email already exists");
 
 
             }
 
-            if (usernameExists || emailExists) {
-                if (usernameExists) {
 
-                    System.out.println("Username already in use");
-
-
-                }
-
-                if (emailExists) {
-
-                    System.out.println("Email already in use");
-
-                }
-
-
-                return false;
-
-            }
 
 
         }
