@@ -44,15 +44,49 @@ public class UserService {
         return true;
     }
 
+    public User getUser(String username) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUsername().equals(username)) {
+                return users.get(i);
+            }
+
+        }
+
+
+                throw new IllegalArgumentException("Username not found");
+
+
+        }
+
+
+
+
+    public void printUser(User user) {
+        System.out.println("\nAccount Number: " + user.getAccountNumber());
+        System.out.println("Username: " + user.getUsername());
+        System.out.println("Name: " + user.getName());
+        System.out.println("Email: " + user.getEmail());
+
+
+
+    }
+
 
     //Remove User
     public boolean removeUser(User user) {
-        if (users.contains(user) == false) {
-            return false;
-        }
 
-        users.remove(user);
-        return true;
+
+     for(int i = 0; i < users.size(); i++) {
+
+         if (users.get(i).getUsername().equals(user.getUsername())) {
+             users.remove(user);
+             return true;
+
+         }
+     }
+
+     throw new IllegalArgumentException("User not found");
+
     }
 
 

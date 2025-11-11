@@ -16,6 +16,66 @@ public class UserController {
     //Create User
     public void createUser(User user) {
 
+
+
+
+        if (!validateUser(user)) {
+            return;
+        }
+
+
+        try {
+            boolean success = userService.createUser(user);
+            if (success) {
+                System.out.println("User created successfully");
+            }
+        }catch (IllegalArgumentException e){
+
+                System.out.println("There was an error while creating the user: " + e.getMessage());
+
+
+            }
+
+        }
+
+        public void printUser(User user) {
+
+
+
+            userService.printUser(user);
+
+        }
+
+
+
+    public void updateUser(int accountNumber, String username, String hashedPassword, String name, String email) {
+        boolean success = userService.updateUser(accountNumber, username, hashedPassword, name, email);
+        if (success) {
+            System.out.println("User updated successfully");
+
+        } else {
+            System.out.println("User update failed");
+        }
+
+    }
+
+    public void removeUser(User user) {
+        try {
+            boolean success = userService.removeUser(user);
+            if (success) {
+                System.out.println("User deleted successfully");
+            }
+        } catch (IllegalArgumentException e) {
+
+            System.out.println("User deletion error: " + e.getMessage());
+
+
+        }
+
+    }
+
+    public boolean validateUser(User user) {
+
         boolean isValid = true;
 
         String role = user.getRole();
@@ -62,51 +122,7 @@ public class UserController {
 
         }
 
-
-        if (!isValid) {
-            return;
-        }
-
-
-
-        try {
-            boolean success = userService.createUser(user);
-            if (success) {
-                System.out.println("User created successfully");
-            }
-        }catch (IllegalArgumentException e){
-
-                System.out.println("There was an error while creating the user: " + e.getMessage());
-
-
-            }
-
-        }
-
-
-
-    public void updateUser(int accountNumber, String username, String hashedPassword, String name, String email) {
-        boolean success = userService.updateUser(accountNumber, username, hashedPassword, name, email);
-        if (success) {
-            System.out.println("User updated successfully");
-
-        } else {
-            System.out.println("User update failed");
-        }
-
-    }
-
-    public void deleteUser(User user) {
-        boolean success = userService.removeUser(user);
-        if (success) {
-            System.out.println("User deleted successfully");
-        } else {
-            System.out.println("User delete failed");
-        }
-    }
-
-    public void validateUser(String username, String hashedPassword, String name, String email) {
-        
+        return isValid;
     }
 
 

@@ -18,17 +18,21 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int choice;
 
+        //Manual patient creation
+        User newUser = new Patient("john123", "John Smith", "pass123", "johnsmith123@gmail.com");
+        userService.createUser(newUser);
+
 
         System.out.println("Admin Dashboard");
         System.out.println("1. Create User");
+        System.out.println("2. Print User");
+        System.out.println("3. Delete User");
         choice = input.nextInt();
         input.nextLine();
 
         if (choice == 1) {
 
-            //Manual patient creation
-            User newUser = new Patient("john123", "John Smith", "pass123", "johnsmith123@gmail.com");
-            userService.createUser(newUser);
+
 
             System.out.println("Please enter a username: ");
             String username = input.nextLine().trim();
@@ -75,6 +79,49 @@ public class Main {
                 System.out.println("Invalid role");
             }
 
+
+        }
+
+        else if (choice == 2) {
+            System.out.println("Please enter a username: ");
+            String username = input.nextLine().trim();
+
+            try {
+                //Get user
+                User user = userService.getUser(username);
+
+                userController.printUser(user);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+        }
+
+        else if (choice == 3) {
+            System.out.println("Please enter a username: ");
+            String username = input.nextLine().trim();
+
+            try {
+                //Get user
+                User user = userService.getUser(username);
+
+                userController.printUser(user);
+
+                System.out.println("\nAre you sure you want to delete this user");
+                System.out.println("Re enter the username to confirm or type no to exit: ");
+                String confirm = input.nextLine().trim();
+
+                if(confirm.equals(username)) {
+                    userController.removeUser(user);
+                }
+
+                else{
+                    System.out.println("Deletion cancelled");
+                }
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
 
         }
 
