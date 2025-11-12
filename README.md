@@ -72,5 +72,10 @@ Each team member contributes to different project components, including:
 
 <img width="1371" height="523" alt="image" src="https://github.com/user-attachments/assets/abb66609-5fbb-4ea8-8e27-bfdc33b311f6" />
 
+## Use Case Diagram
+
+<img width="1112" height="779" alt="image" src="https://github.com/user-attachments/assets/3bf9891d-0c0f-4374-8a1b-fb1598fe3d23" />
+
+
 
 
