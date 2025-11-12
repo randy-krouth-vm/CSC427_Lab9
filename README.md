@@ -1,4 +1,3 @@
-<br>
 
 # **CSC 427 – Lab 9: Patient Management Application**
 
