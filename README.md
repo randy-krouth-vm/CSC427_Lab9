@@ -1,11 +1,77 @@
-# CSC427 – Lab 9
+<br>
 
-**Course:** CSC 427 – Software Engineering  
-**Level:** Undergraduate  
-**Project Type:** Team Project  
+# **CSC 427 – Lab 9: Patient Management Application**
+
+**Course:** CSC 427 – Software Engineering
+**Level:** Undergraduate
+**Project Type:** Team Project
 
 ---
 
-## Overview
-This repository contains the team-based software engineering project for CSC 427.  
-It includes design documentation, source code, and test cases developed collaboratively as part of the course requirements.
+## **Overview**
+
+This repository contains the collaborative team project developed for *CSC 427: Software Engineering*.
+The project focuses on designing and implementing a **Patient Management Application**, demonstrating key principles of software engineering such as requirements analysis, modular design, testing, and version control.
+
+The repository includes:
+
+* 📘 **Design Documentation** – UML diagrams, data flow diagrams, use cases, and design rationale
+* 💻 **Source Code** – Implemented in Java following the MVC architecture
+* 🧪 **Test Cases** – Unit and integration tests verifying correctness and maintainability
+
+---
+
+## **Objective**
+
+The goal of this lab is to apply software engineering best practices within a team environment to build a small but complete software system.
+Team members collaborate using GitHub, adhere to coding standards, conduct peer reviews, and demonstrate agile project development methods.
+
+---
+
+## **Team Collaboration**
+
+Each team member contributes to different project components, including:
+
+* Backend logic (models and services)
+* Controller development
+* Testing and validation
+* Documentation and project management (using Jira) 
+
+---
+
+## **Deliverables**
+
+* ✅ Functional source code implementing patient and appointment management
+* 📄 Design and requirements documentation
+* 🧩 Comprehensive unit test suite
+* 🗒️ Project retrospective and team evaluation
+
+---
+
+## **Team Members**
+- Jason Lowey
+- Madhav Sharma
+- Umang Basnet
+- Punika Shrestha
+- Randall Krouth
+
+## Architecture Design Overview
+
+---
+
+  <img width="1338" height="741" alt="image" src="https://github.com/user-attachments/assets/af579fa8-22e1-4340-aaa9-7680c519e659" />
+
+## Flat Design Overview
+
+---
+
+<img width="1388" height="550" alt="image" src="https://github.com/user-attachments/assets/1afaed5c-8b3e-4a3b-a289-9de26bb8df1c" />
+
+## Data Flow Diagram
+
+---
+
+<img width="1371" height="523" alt="image" src="https://github.com/user-attachments/assets/abb66609-5fbb-4ea8-8e27-bfdc33b311f6" />
+
+
+
