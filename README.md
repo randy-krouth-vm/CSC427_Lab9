@@ -65,7 +65,8 @@ Each team member contributes to different project components, including:
 
 ---
 
-<img width="1388" height="550" alt="image" src="https://github.com/user-attachments/assets/1afaed5c-8b3e-4a3b-a289-9de26bb8df1c" />
+<img width="1297" height="726" alt="image" src="https://github.com/user-attachments/assets/dc4b5e00-7730-49e8-9ce6-59291a60e7cf" />
+
 
 ## Data Flow Diagram
 
