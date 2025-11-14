@@ -58,7 +58,8 @@ Each team member contributes to different project components, including:
 
 ---
 
-  <img width="1349" height="747" alt="image" src="https://github.com/user-attachments/assets/af118366-ab5e-4a1a-93e0-012c8535d4e7" />
+  <img width="1396" height="786" alt="image" src="https://github.com/user-attachments/assets/cc6154c8-e00c-4435-b468-bd8617542a8f" />
+
 
 
 ## Flat Design Overview
