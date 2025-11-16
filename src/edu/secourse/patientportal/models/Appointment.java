@@ -9,17 +9,27 @@ public class Appointment {
     private Doctor doctor;
     //LocalDateTime.of(2025,11,1,8,30);
     private LocalDateTime appointmentDateTime;
+    private Status status;
+
+    public Status getStatus() {
+        return status;
+    }
 
 
-    enum Status {
+    public enum Status {
         ACTIVE, CANCELLED
     }
 
-    public Appointment(int appointmentId, Patient patient, Doctor doctor) {
+    public Appointment(Patient patient, Doctor doctor, LocalDateTime appointmentDateTime) {
         this.appointmentId = appointmentId;
         this.patient = patient;
         this.doctor = doctor;
         this.appointmentDateTime = LocalDateTime.now();
+        Status status = Status.ACTIVE;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
 
@@ -28,6 +38,7 @@ public class Appointment {
     }
 
     public void setAppointmentId(int appointmentId) {
+
         this.appointmentId = appointmentId;
     }
 
@@ -53,6 +64,10 @@ public class Appointment {
 
     public void setAppointmentDateTime(LocalDateTime appointmentDateTime) {
         this.appointmentDateTime = appointmentDateTime;
+    }
+
+    public void cancelAppointment() {
+        this.status = Status.CANCELLED;
     }
 
 

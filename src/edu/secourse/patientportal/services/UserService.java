@@ -52,8 +52,8 @@ public class UserService {
 
         }
 
-
-                throw new IllegalArgumentException("Username not found");
+        return null;
+//
 
 
         }
@@ -66,6 +66,8 @@ public class UserService {
         System.out.println("Username: " + user.getUsername());
         System.out.println("Name: " + user.getName());
         System.out.println("Email: " + user.getEmail());
+
+
 
 
 
@@ -84,8 +86,8 @@ public class UserService {
 
          }
      }
+        return false;
 
-     throw new IllegalArgumentException("User not found");
 
     }
 
@@ -100,7 +102,7 @@ public class UserService {
         for (int i = 0; i < users.size(); i++) {
             User currentUser = users.get(i);
             if (currentUser.getUsername().equals(username) && currentUser.getAccountNumber() != accountNumber) {
-                return false;
+                throw new IllegalArgumentException("Username already exists");
             }
         }
 

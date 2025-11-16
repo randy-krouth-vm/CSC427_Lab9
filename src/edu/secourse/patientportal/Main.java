@@ -83,7 +83,7 @@ public class Main {
         }
 
         else if (choice == 2) {
-            System.out.println("Please enter a username: ");
+            System.out.print("Please enter a username: ");
             String username = input.nextLine().trim();
 
             try {
@@ -98,7 +98,7 @@ public class Main {
         }
 
         else if (choice == 3) {
-            System.out.println("Please enter a username: ");
+            System.out.print("Please enter a username: ");
             String username = input.nextLine().trim();
 
             try {
@@ -108,7 +108,7 @@ public class Main {
                 userController.printUser(user);
 
                 System.out.println("\nAre you sure you want to delete this user");
-                System.out.println("Re enter the username to confirm or type no to exit: ");
+                System.out.print("Re-enter the username to confirm or type no to exit: ");
                 String confirm = input.nextLine().trim();
 
                 if(confirm.equals(username)) {
@@ -126,23 +126,6 @@ public class Main {
         }
 
 
-//        if (user1 instanceof Patient) {
-//            System.out.println(((Patient) user1).getPatientId());
-//        }
-//
-//        if (user1 instanceof Patient) {
-//            System.out.println(((Patient) user2).getPatientId());
-//        }
 
-
-//        System.out.println(user1.getAccountNumber());
-//        System.out.println(user2.getAccountNumber());
-
-
-//        // Remove a user
-//        userController.deleteUser(user1);
-//
-//        // Try to remove again
-//        userController.deleteUser(user1);
     }
 }
