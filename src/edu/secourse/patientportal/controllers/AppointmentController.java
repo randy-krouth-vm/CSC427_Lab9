@@ -35,7 +35,7 @@ public class AppointmentController {
         }
     }
 
-
+    //Changes details
     public void modifyAppointment(int appointmentId, Patient patient, Doctor doctor, LocalDateTime newDateTime) {
         try {
             boolean success = appointmentService.modifyAppointment(appointmentId, patient, doctor, newDateTime);
